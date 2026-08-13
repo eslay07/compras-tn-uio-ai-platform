@@ -1,0 +1,13 @@
+node_modules/
+.clasprc.json
+.clasp.json
+src/00_Config.gs
+config.gs
+.env
+.env.local
+.DS_Store
+Thumbs.db
+*.log
+private/
+credentials/
+secrets/
