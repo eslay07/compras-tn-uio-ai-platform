@@ -1,4 +1,4 @@
-PASOS GIT Y GITHUB â€” Compras TN UIO con IA
+PASOS GIT Y GITHUB — Compras TN UIO con IA
 Generado el 12 de agosto de 2026
 
 Rama oficial: main
@@ -20,11 +20,11 @@ Get-Content -Raw .\Remoto.js | node --check -
 
 3. REEMPLAZAR UNA SOLA VEZ LA RAMA REMOTA SANEADA
 
-ADVERTENCIA: el historial original ya estÃ¡ respaldado en ..\_respaldos_git. Revisa GitHub antes de ejecutar. No publiques ramas de respaldo ni referencias antiguas.
+ADVERTENCIA: el historial original ya está respaldado en ..\_respaldos_git. Revisa GitHub antes de ejecutar. No publiques ramas de respaldo ni referencias antiguas.
 
 git remote -v
 $expected = (git ls-remote origin refs/heads/main).Split()[0]
-if (-not $expected) { throw 'No se encontrÃ³ la rama remota esperada' }
+if (-not $expected) { throw 'No se encontró la rama remota esperada' }
 git push --force-with-lease=main:$expected origin main:main
 
 # Las variantes nuevas se publican normalmente:
@@ -32,7 +32,7 @@ git push -u origin codex/version-webapp-3.0
 git push -u origin codex/integracion-gmail-4.3.3
 git push origin --tags
 
-# DespuÃ©s de verificar GitHub, elimina manualmente ramas remotas antiguas que contengan datos sensibles.
+# Después de verificar GitHub, elimina manualmente ramas remotas antiguas que contengan datos sensibles.
 # Primero lista: git ls-remote --heads origin
 # Luego, una por una: git push origin --delete NOMBRE_RAMA_ANTIGUA
 
@@ -45,15 +45,15 @@ git switch main
 git pull --ff-only origin main
 git status --short
 
-# Edita y prueba tus cambios. DespuÃ©s revisa exactamente lo que vas a confirmar:
+# Edita y prueba tus cambios. Después revisa exactamente lo que vas a confirmar:
 git diff
 git add -A
 git diff --cached --stat
 git diff --cached
-git commit -m "feat: mejorar clasificaciÃ³n asistida de compras" -m "Describe aquÃ­ quÃ© cambiÃ³, por quÃ© y cÃ³mo se validÃ³."
+git commit -m "feat: mejorar clasificación asistida de compras" -m "Describe aquí qué cambió, por qué y cómo se validó."
 git push origin main
 
-5. CREAR UNA RAMA PARA UNA VERSIÃ“N ALTERNATIVA
+5. CREAR UNA RAMA PARA UNA VERSIÓN ALTERNATIVA
 
 git switch main
 git pull --ff-only origin main
@@ -68,4 +68,4 @@ git push -u origin codex/nombre-de-la-variante
 git status --short
 git ls-files | Select-String -Pattern '(^|/)(\.env|\.clasp\.json|config\.json)$|\.(db|sqlite|log|key|pem|p12|pfx|keystore|jks)$'
 
-Si aparece una credencial, no hagas push. RetÃ­rala, revÃ³cala en el proveedor y vuelve a revisar todo el historial. Nunca uses fechas falsas: cada commit debe reflejar trabajo real ejecutado ese dÃ­a.
+Si aparece una credencial, no hagas push. Retírala, revócala en el proveedor y vuelve a revisar todo el historial. Nunca uses fechas falsas: cada commit debe reflejar trabajo real ejecutado ese día.
