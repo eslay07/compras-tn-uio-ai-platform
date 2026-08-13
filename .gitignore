@@ -37,7 +37,7 @@ tmp/
 temp/
 profiles/
 sessions/
-data/
+/data/
 datos_raw/
 reportes/
 firma/
